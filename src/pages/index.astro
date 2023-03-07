@@ -1,0 +1,339 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    callToAction={{
+      text: 'Download Extension',
+      href: '#',
+      icon: 'tabler:download',
+    }}
+    callToAction2={{ text: 'Learn more', href: '#features' }}
+  >
+    <Fragment slot="title">
+      A <span class="text-accent highlight"> Browser Extension</span> that can manage your bookmarks and shortcuts.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Kairy</span> is a free, all-in-one bookmarking tool for saving and organizing anything
+        from the web with thematic collections, tags, custom filters, and sorting options and more.</span
+      >
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    highlight="Features"
+    title="What can you do with Kairy?"
+    subtitle="With Kairy, you can save and organize anything from the web with thematic collections, tags, and filters, sort items, and protect your privacy by storing data locally. You can also easily import and export bookmarks."
+    items={[
+      [
+        {
+          title: 'Create Bookmark with One Click',
+          description: 'Easily create bookmarks by directly clicking on the Kairy extension icon.',
+          icon: 'mdi:bookmark-plus-outline',
+        },
+        {
+          title: 'Organize with Categories and Tags',
+          description: 'Manage bookmarks and reading lists by categories and tags for easy access and organization.',
+          icon: 'mdi:folder-multiple-outline',
+        },
+        {
+          title: 'Effortlessly Search Bookmarks',
+          description: "Quickly search bookmarks and shortcuts using Kairy's easy search function.",
+          icon: 'mdi:book-search-outline',
+        },
+      ],
+      [
+        {
+          title: 'Protect Your Privacy',
+          description:
+            "Kairy doesn't store any of your data - all your bookmarks are stored on your own device for privacy and security.",
+          icon: 'mdi:lock-outline',
+        },
+        {
+          title: 'Easily Import and Export Bookmarks',
+          description: 'Export and import bookmarks with just one click for easy sharing or backup.',
+          icon: 'mdi:import-export',
+        },
+      ],
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    highlight="Inside template"
+    title="And what's inside? ..."
+    items={[
+      {
+        title: 'Per ei quaeque sensibus',
+        description:
+          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+      },
+      {
+        title: 'Cu imperdiet posidonium sed',
+        description:
+          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+      },
+      {
+        title: 'Nulla omittam sadipscing mel ne',
+        description:
+          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/caos.jpg'),
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
+      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
+      tacimates.
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Per ei quaeque sensibus',
+      },
+      {
+        title: 'Cu imperdiet posidonium sed',
+      },
+      {
+        title: 'Nulla omittam sadipscing mel ne',
+      },
+      {
+        title: 'Per ei quaeque sensibus',
+      },
+      {
+        title: 'Cu imperdiet posidonium sed',
+      },
+      {
+        title: 'Nulla omittam sadipscing mel ne',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/vintage.jpg'),
+      alt: 'Vintage Image',
+    }}
+  /> -->
+
+  <!-- Steps Widget ****************** -->
+
+  <!-- <Steps
+    title="Get your dream website up and running in no time with AstroWind."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</em>',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/creativity.jpg'),
+      alt: 'Steps image',
+    }}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    highlight="Components"
+    items={[
+      {
+        title: 'Headers',
+        description:
+          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Heros',
+        description:
+          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Display your product in action and how the Features actually create a solution for your target customer.',
+        icon: 'flat-color-icons:todo-list',
+      },
+      {
+        title: 'Content',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+        icon: 'icon-park:page-template',
+      },
+    ]}
+  /> -->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <LatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+			Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+			Astro is a very interesting technology. Thanks.
+		`}
+    postIds={[
+      // 'get-started-website-with-astro-tailwind-css.md',
+      // 'how-to-customize-astrowind-to-your-brand.md',
+      'useful-resources-to-create-websites.md',
+      // 'astrowind-template-in-depth.md',
+    ]}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    highlight="FAQs"
+    items={[
+      [
+        {
+          question: 'What is the purpose of Kairy?',
+          answer:
+            'Kairy is a browser extension for saving and organizing your reading list, bookmarks, and tasks to increase your productivity while working on different tasks.',
+        },
+        {
+          question: 'Which browsers is Kairy compatible with?',
+          answer: 'Kairy is currently compatible with Google Chrome and Mozilla Firefox.',
+        },
+        {
+          question: 'Can I use Kairy on multiple devices?',
+          answer:
+            'Yes, you can use Kairy on multiple devices by signing up for an account. This will allow you to sync your bookmarks, reading lists, and tasks across all your devices.',
+        },
+      ],
+      [
+        {
+          question: 'Is my data secure with Kairy?',
+          answer:
+            'Yes, all data saved in Kairy is stored locally on your device and is not sent anywhere. Kairy also does not use any tracking code or cookies.',
+        },
+        {
+          question: 'How can I organize my bookmarks and reading lists in Kairy?',
+          answer:
+            'You can organize your bookmarks and reading lists in Kairy by creating categories and tags. This allows you to easily manage and find specific bookmarks.',
+        },
+        {
+          question: 'How do I create a bookmark in Kairy?',
+          answer:
+            "You can create a bookmark in Kairy by directly clicking on the extension's icon while on the page you want to bookmark. This will add the page to your bookmarks list.",
+        },
+      ],
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    items={[
+      { name: 'Downloads', value: '100+' },
+      { name: 'Stars', value: '10+' },
+      { name: 'Forks', value: '10+' },
+      { name: 'Users', value: '50+' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    callToAction={{
+      text: 'Download Now',
+      href: '#',
+      icon: 'tabler:download',
+    }}
+  >
+    <Fragment slot="title">Kairy - Keep it organized</Fragment>
+
+    <Fragment slot="subtitle">
+      Kairy is a browser extension that helps you save and organize bookmarks, reading lists, and tasks for better
+      productivity. It solves the problem of inefficient bookmarking tools by providing a clean and simple UI for
+      creating multiple lists and managing information with categories and tags.
+    </Fragment>
+  </CallToAction>
+</Layout>
