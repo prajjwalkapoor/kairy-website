@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -7,8 +7,12 @@ export const headerData = {
       href: 'https://github.com/prajjwalkapoor/kairy',
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Features',
+      href: '#features',
+    },
+    {
+      text: 'FAQs',
+      href: '#faq',
     },
   ],
   actions: [{ type: 'button', text: 'View Blog', href: getPermalink('/blog') }],

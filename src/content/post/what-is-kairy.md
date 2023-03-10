@@ -1,6 +1,6 @@
 ---
 publishDate: 2023-01-09T00:00:00Z
-title: Useful tools and resources to create a professional website
+title: Kairy - A free, open source, browser extension to manage you bookmarks
 excerpt: Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui mollit tempor pariatur.
 image: ~/assets/images/tools.jpg
 tags:
