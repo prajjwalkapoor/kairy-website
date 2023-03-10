@@ -25,7 +25,7 @@ const CONFIG = {
   }),
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  googleSiteVerificationId: '4Utz1vVPzE5K8bkl4hbA8fz8uMVdUIQvIxIUjtOL5rA',
 
   blog: {
     disabled: false,
