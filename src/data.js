@@ -14,6 +14,10 @@ export const headerData = {
       text: 'FAQs',
       href: '#faq',
     },
+    {
+      text: 'Feedback',
+      href: 'https://forms.gle/UMns9N1sDV78vhFq8',
+    },
   ],
   actions: [{ type: 'button', text: 'View Blog', href: getPermalink('/blog') }],
 };
